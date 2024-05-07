@@ -4,7 +4,7 @@ export interface IUser extends Document {
     email: string
     password: string
     name: string
-    confirmed: boolean
+    
 }
 
 const userSchema: Schema = new Schema({
@@ -22,10 +22,7 @@ const userSchema: Schema = new Schema({
         type: String,
         required: true
     },
-    confirmed: {
-        type: Boolean,
-        default: false
-    },
+    
 })
 
 const User = mongoose.model<IUser>('User', userSchema)

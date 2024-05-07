@@ -23,12 +23,7 @@ router.post('/create-account',
     AuthController.createAccount
 )
 
-router.post('/confirm-account',
-    body('token')
-        .notEmpty().withMessage('El Token no puede ir vacio'),
-    handleInputErrors,
-    AuthController.confirmAccount
-)
+
 
 router.post('/login',
     body('email')
@@ -39,19 +34,8 @@ router.post('/login',
     AuthController.login
 )
 
-router.post('/request-code',
-    body('email')
-        .isEmail().withMessage('E-mail no válido'),
-    handleInputErrors,
-    AuthController.requestConfirmationCode
-)
 
-router.post('/forgot-password',
-    body('email')
-        .isEmail().withMessage('E-mail no válido'),
-    handleInputErrors,
-    AuthController.forgotPassword
-)
+
 
 router.post('/validate-token',
     body('token')
